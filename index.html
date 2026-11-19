@@ -1,369 +1,1467 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taha Laxmidhar | Portfolio</title>
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-main: #ffffff;
-      --bg-soft: #f8fbfd;
-      --blue: #bce0f5;
-      --green: #b4e5a2;
-      --yellow: #fde96c;
-      --text-dark: #1e242b;
-      --text-muted: #4b5563;
-      --border-light: #e5edf3;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <title>Taha Laxmidhar | Personal Portfolio</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+    <meta name="description" content="A personal portfolio documenting my explorations in technology, science, philosophy and creativity.">
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-main);
-      color: var(--text-dark);
-      line-height: 1.65;
-    }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    /* Navigation */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-light);
-    }
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    .nav-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    <style>
 
-    .brand {
-      font-family: 'Caveat', cursive;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      text-decoration: none;
-    }
+        /* =================================
+           01. GLOBAL SETTINGS
+        ================================= */
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
+        :root {
+            --background: #faf9f6;
+            --surface: #ffffff;
+            --text: #252a2d;
+            --muted: #777d80;
 
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: opacity 0.2s;
-    }
+            --blue: #c8e2f0;
+            --green: #d2e5c9;
+            --yellow: #f5e9a7;
 
-    .nav-links a:hover {
-      opacity: 0.65;
-    }
+            --border: #e8e6df;
 
-    /* Layout Helpers */
-    section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 4.5rem 1.5rem;
-    }
+            --serif: 'Playfair Display', serif;
+            --sans: 'DM Sans', sans-serif;
+            --mono: 'DM Mono', monospace;
+        }
 
-    .section-tag {
-      display: inline-block;
-      padding: 0.3rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .tag-blue { background-color: var(--blue); }
-    .tag-green { background-color: var(--green); }
-    .tag-yellow { background-color: var(--yellow); }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family: var(--sans);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-top: 5rem;
-      padding-bottom: 4.5rem;
-      position: relative;
-    }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    /* Logo Circle (Matches your uploaded emblem style) */
-    logo-emblem {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--border-light);
-  margin-bottom: 1.5rem;
-  box-shadow: 0 10px 25px rgba(30, 36, 43, 0.06);
-}
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-    .logo-emblem span {
-      font-family: 'Caveat', cursive;
-      font-size: 1.85rem;
-      line-height: 1.05;
-      font-weight: 700;
-      color: var(--text-dark);
-    }
+        .container {
+            max-width: 1120px;
+            width: 90%;
+            margin: auto;
+        }
 
-    .hero h1 {
-      font-size: 2.75rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
-    }
+        .mono {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
 
-    .hero p {
-      max-width: 600px;
-      font-size: 1.12rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
+        .section {
+            padding: 110px 0;
+            border-top: 1px solid var(--border);
+        }
 
-    .btn-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 45px;
+            gap: 20px;
+        }
 
-    .btn {
-      padding: 0.8rem 1.5rem;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--text-dark);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
+        .section-heading h2 {
+            font-family: var(--serif);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: -0.04em;
+            line-height: 1.2;
+        }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(30, 36, 43, 0.08);
-    }
 
-    .btn-primary { background-color: var(--blue); }
-    .btn-secondary { background-color: var(--yellow); }
+        /* =================================
+           02. NAVIGATION
+        ================================= */
 
-    /* About Card */
-    .about-box {
-      background-color: var(--bg-soft);
-      border: 1px solid var(--border-light);
-      border-radius: 18px;
-      padding: 2rem;
-    }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(250, 249, 246, 0.92);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
 
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1.25rem;
-    }
+        .nav {
+            max-width: 1120px;
+            width: 90%;
+            margin: auto;
+            height: 76px;
 
-    .pill {
-      padding: 0.4rem 0.9rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      background-color: #ffffff;
-      border: 1px solid var(--border-light);
-    }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* Grid Cards */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
+        .brand {
+            font-family: var(--serif);
+            font-size: 1.55rem;
+            font-weight: 600;
+            letter-spacing: -0.04em;
+        }
 
-    .card {
-      border-radius: 16px;
-      padding: 1.75rem;
-      border: 1px solid var(--border-light);
-      transition: transform 0.2s ease;
-    }
+        .brand span {
+            color: #83a8bb;
+        }
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
 
-    .card-blue { background-color: rgba(188, 224, 245, 0.35); }
-    .card-green { background-color: rgba(180, 229, 162, 0.35); }
-    .card-yellow { background-color: rgba(253, 233, 108, 0.35); }
+        .nav-links a {
+            font-size: 0.85rem;
+            color: var(--muted);
+            transition: color 0.3s;
+        }
 
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.6rem;
-    }
+        .nav-links a:hover {
+            color: var(--text);
+        }
 
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.96rem;
-    }
+        .nav-status {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            color: var(--muted);
+        }
 
-    /* Photography Placeholders */
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
 
-    .photo-card {
-      border: 1px solid var(--border-light);
-      border-radius: 14px;
-      overflow: hidden;
-      background: #ffffff;
-    }
+        /* =================================
+           03. HERO SECTION
+        ================================= */
 
-    .photo-placeholder {
-      height: 200px;
-      background: linear-gradient(135deg, var(--blue), var(--green));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
+        .hero {
+            min-height: 690px;
+            padding: 100px 0 90px;
 
-    /* If you replace the placeholder with a real <img>, this styles it cleanly */
-    .photo-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    .photo-caption {
-      padding: 0.9rem 1rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 55px;
+        }
 
-    /* Contact Footer */
-    footer {
-      background-color: var(--bg-soft);
-      border-top: 1px solid var(--border-light);
-      text-align: center;
-      padding: 3.5rem 1.5rem;
-      margin-top: 2rem;
-    }
+        .hero-logo {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
 
-    footer p {
-      color: var(--text-muted);
-      max-width: 500px;
-      margin: 0.5rem auto 1.5rem;
-    }
+        .hero-intro {
+            max-width: 850px;
+        }
 
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 2.1rem; }
-      .nav-links { gap: 1rem; font-size: 0.85rem; }
-    }
-  </style>
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(3.5rem, 9vw, 7.3rem);
+            line-height: 1.05;
+            font-weight: 400;
+            letter-spacing: -0.065em;
+        }
+
+        .hero h1 .italic {
+            font-style: italic;
+            color: #779caf;
+        }
+
+        .hero-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+            gap: 30px;
+            margin-top: 45px;
+        }
+
+        .hero-description {
+            max-width: 430px;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .hero-description strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 21px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .button-dark {
+            background: var(--text);
+            color: white;
+        }
+
+        .button-dark:hover {
+            background: #506b7a;
+            transform: translateY(-3px);
+        }
+
+        .button-light {
+            border: 1px solid var(--border);
+        }
+
+        .button-light:hover {
+            background: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .hero-note {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 90px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+        }
+
+
+        /* =================================
+           04. ABOUT SECTION
+        ================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 100px;
+        }
+
+        .about-label {
+            padding-top: 10px;
+        }
+
+        .about-label .number {
+            font-family: var(--serif);
+            font-size: 5rem;
+            color: #b5cdd8;
+            line-height: 1;
+        }
+
+        .about-content h3 {
+            font-family: var(--serif);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 400;
+            line-height: 1.35;
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+        }
+
+        .about-content .highlight {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .quote {
+            margin-top: 35px;
+            padding: 25px;
+            background: #eef3f3;
+            border-left: 3px solid #a9c8d7;
+        }
+
+        .quote p {
+            font-family: var(--serif);
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--text);
+            margin: 0;
+        }
+
+
+        /* =================================
+           05. EXPLORATIONS
+        ================================= */
+
+        .exploration-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .exploration-card {
+            min-height: 245px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.35s, box-shadow 0.35s;
+        }
+
+        .exploration-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(30, 36, 43, 0.06);
+        }
+
+        .exploration-card.blue {
+            background: #e8f1f5;
+        }
+
+        .exploration-card.green {
+            background: #edf2e8;
+        }
+
+        .exploration-card.yellow {
+            background: #f8f2da;
+        }
+
+        .exploration-card.white {
+            background: #fff;
+        }
+
+        .exploration-icon {
+            font-size: 1.8rem;
+        }
+
+        .exploration-card h3 {
+            font-family: var(--serif);
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 7px;
+        }
+
+        .exploration-card p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            max-width: 390px;
+        }
+
+        .card-number {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--muted);
+        }
+
+
+        /* =================================
+           06. PROJECTS
+        ================================= */
+
+        .projects-intro {
+            color: var(--muted);
+            max-width: 480px;
+            font-size: 0.92rem;
+        }
+
+        .project-list {
+            border-top: 1px solid var(--border);
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: 65px 1fr 150px 30px;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 10px;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .project:hover {
+            background: rgba(200, 226, 240, 0.2);
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .project-number {
+            font-family: var(--mono);
+            color: var(--muted);
+            font-size: 0.75rem;
+        }
+
+        .project h3 {
+            font-family: var(--serif);
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        .project-type {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            color: var(--muted);
+        }
+
+        .project-arrow {
+            font-size: 1.3rem;
+            transition: transform 0.3s;
+        }
+
+        .project:hover .project-arrow {
+            transform: translate(4px, -4px);
+        }
+
+
+        /* =================================
+           07. CREATIVE JOURNAL
+        ================================= */
+
+        .journal-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 25px;
+        }
+
+        .journal-image {
+            height: 380px;
+            background: linear-gradient(135deg, #d5e5e9, #b4c8bb);
+            overflow: hidden;
+        }
+
+        .journal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .journal-image:hover img {
+            transform: scale(1.04);
+        }
+
+        .journal-placeholder {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--serif);
+            font-size: 2rem;
+            color: #526a70;
+        }
+
+        .journal-caption {
+            padding-top: 15px;
+        }
+
+        .journal-caption h3 {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .journal-caption p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .journal-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 35px;
+            background: var(--yellow);
+        }
+
+        .journal-side h3 {
+            font-family: var(--serif);
+            font-size: 2.1rem;
+            line-height: 1.25;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .journal-side p {
+            font-size: 0.88rem;
+            color: #6d6544;
+        }
+
+
+        /* =================================
+           08. PHILOSOPHY
+        ================================= */
+
+        .philosophy {
+            background: #eaf1f1;
+            padding: 90px 0;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .philosophy h2 {
+            font-family: var(--serif);
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.25;
+            margin: 25px 0;
+        }
+
+        .philosophy h2 span {
+            font-style: italic;
+            color: #789bab;
+        }
+
+        .philosophy p {
+            color: var(--muted);
+            max-width: 550px;
+            margin: auto;
+            font-size: 0.9rem;
+        }
+
+
+        /* =================================
+           09. CONTACT & FOOTER
+        ================================= */
+
+        .contact {
+            padding: 110px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: var(--serif);
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 400;
+            margin: 20px 0;
+        }
+
+        .contact p {
+            max-width: 450px;
+            color: var(--muted);
+            margin: 0 auto 30px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        footer p {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            color: var(--muted);
+        }
+
+
+        /* =================================
+           10. ANIMATIONS
+        ================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =================================
+           11. RESPONSIVE DESIGN
+        ================================= */
+
+        @media (max-width: 768px) {
+
+            .container {
+                width: 88%;
+            }
+
+            .nav {
+                width: 88%;
+                height: 68px;
+            }
+
+            .nav-status {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 0.72rem;
+            }
+
+            .brand {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 85px 0 65px;
+            }
+
+            .hero-top {
+                margin-bottom: 40px;
+            }
+
+            .hero-logo {
+                width: 65px;
+                height: 65px;
+            }
+
+            .hero-bottom {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .hero-actions {
+                justify-content: flex-start;
+            }
+
+            .hero-note {
+                margin-top: 55px;
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .about-label .number {
+                font-size: 3.5rem;
+            }
+
+            .exploration-grid {
+                gap: 12px;
+            }
+
+            .exploration-card {
+                min-height: 220px;
+                padding: 20px;
+            }
+
+            .exploration-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .project {
+                grid-template-columns: 35px 1fr 25px;
+                gap: 12px;
+            }
+
+            .project-type {
+                display: none;
+            }
+
+            .project h3 {
+                font-size: 1.25rem;
+            }
+
+            .journal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journal-image {
+                height: 280px;
+            }
+
+            .journal-side {
+                padding: 30px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 0.65rem;
+            }
+
+            .brand {
+                font-size: 1.15rem;
+            }
+
+            .hero h1 {
+                font-size: 3.4rem;
+            }
+
+            .hero-note {
+                font-size: 0.58rem;
+            }
+
+            .section-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .exploration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .exploration-card {
+                min-height: 185px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+    </style>
 </head>
+
+
 <body>
 
-  <!-- Top Navigation -->
-  <header>
-    <div class="nav-container">
-      <a href="#" class="brand">Taha Laxmidhar</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#explorations">Explorations</a></li>
-        <li><a href="#creative">Creative</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </header>
+    <!-- =================================
+         NAVIGATION
+    ================================== -->
 
-  <!-- Hero Section -->
-  <section class="hero">
-  <img src="logo.webp" alt="Taha Laxmidhar Logo" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 2px solid #e5edf3; margin-bottom: 1.5rem; box-shadow: 0 10px 25px rgba(30, 36, 43, 0.06);">
+    <header>
+        <nav class="nav">
 
-    <h1>Hi, I'm Taha Laxmidhar.</h1>
-    <p>
-      Class 11 ISC Student exploring the intersection of <strong>Coding</strong>, <strong>AI</strong>, <strong>Robotics</strong>, and human <strong>Psychology</strong>.
-    </p>
-    <div class="btn-group">
-      <a href="#explorations" class="btn btn-primary">See What I'm Exploring</a>
-      <a href="#creative" class="btn btn-secondary">Photography</a>
-    </div>
-  </section>
+            <a href="#" class="brand">
+                TL<span>.</span>
+            </a>
 
-  <!-- About Me -->
-  <section id="about">
-    <span class="section-tag tag-blue">About Me</span>
-    <h3>Curious about machines & minds</h3>
-    <div class="about-box">
-      <p>
-        <!-- [EDIT: Customize this paragraph with your ISC subjects and personal story] -->
-        I am a Class 11 ISC student from India. I have a deep interest for AI, Robotics and programming. Additionally, I am always curious in human psychology, astrophysics, philosophy, photography and problem solving.
-      </p>
-      <div class="pills">
-        <span class="pill">🤖 AI & Robotics</span>
-        <span class="pill">💻 Programming</span>
-        <span class="pill">📸 Photography</span>
-        <span class="pill">🧠 Psychology</span>
-        <span class="pill">🎬 Cinema</span>
-      </div>
-    </div>
-  </section>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#explorations">Explore</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#creative">Creative</a></li>
+            </ul>
 
-  <!-- Tech & Learning Explorations -->
-  <section id="explorations">
-    <span class="section-tag tag-green">Tech & Curiosity</span>
-    <h2>What I'm Learning & Building</h2>
-    <div class="grid">
-      <div class="card card-blue">
-        <h3>Coding & Logic</h3>
-        <p>
-          <!-- [EDIT: Replace with the language you are learning, e.g., Java for ISC or Python] -->
-          Practicing programming fundamentals, solving logic problems, and building my first web pages using HTML and CSS.
-        </p>
-      </div>
-      <div class="card card-green">
-        <h3>AI Experiments</h3>
-        <p>
-          <!-- [EDIT: Mention any AI tool, chatbot, or concept you've explored] -->
-          Exploring how artificial intelligence models process language, assist with creative workflows, and solve everyday problems.
-        </p>
-      </div>
-      <div class="card card-yellow">
-        <h3>Robotics & Hardware</h3>
-        <p>
-          <!-- [EDIT: Mention any Arduino, sensor, or school science model you like] -->
+            <span class="nav-status">
+                INDEPENDENT PORTFOLIO
+            </span>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- =================================
+             HERO
+        ================================== -->
+
+        <section class="hero container">
+
+            <div class="hero-top">
+
+                <img
+                    src="logo.webp"
+                    alt="Taha Laxmidhar emblem"
+                    class="hero-logo"
+                >
+
+                <span class="mono">
+                    EST. IN CURIOSITY / INDIA
+                </span>
+
+            </div>
+
+
+            <div class="hero-intro">
+
+                <span class="mono">
+                    A PERSONAL SPACE BY TAHA LAXMIDHAR
+                </span>
+
+                <h1>
+                    Curiosity has<br>
+                    no <span class="italic">boundaries.</span>
+                </h1>
+
+            </div>
+
+
+            <div class="hero-bottom">
+
+                <p class="hero-description">
+
+                    A student exploring the intersection of
+                    <strong>technology, science, human thought
+                    and creativity.</strong>
+
+                    Learning, experimenting and turning
+                    imagination into something tangible.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a href="#projects" class="button button-dark">
+                        Explore my work ↗
+                    </a>
+
+                    <a href="#about" class="button button-light">
+                        A little about me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-note">
+
+                <span class="mono">
+                    01 — A MIND THAT WANDERS
+                </span>
+
+                <span class="mono">
+                    SCROLL TO EXPLORE ↓
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             ABOUT
+        ================================== -->
+
+        <section class="section" id="about">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="mono">01 / THE PERSON</span>
+                        <h2>Beyond the screen.</h2>
+                    </div>
+
+                    <span class="mono">A LITTLE INTRODUCTION</span>
+
+                </div>
+
+
+                <div class="about-grid reveal">
+
+                    <div class="about-label">
+
+                        <span class="mono">A STUDENT OF LIFE</span>
+
+                        <div class="number">01</div>
+
+                    </div>
+
+
+                    <div class="about-content">
+
+                        <h3>
+                            Fascinated by machines,
+                            minds and the possibilities
+                            of human imagination.
+                        </h3>
+
+
+                        <p>
+
+                            I am a Class 11 ISC student from India
+                            with a deep-rooted interest in AI,
+                            robotics and programming.
+
+                        </p>
+
+
+                        <p>
+
+                            Beyond technology, I find myself
+                            constantly drawn towards human
+                            psychology, astrophysics, philosophy,
+                            photography and the art of
+                            problem-solving.
+
+                        </p>
+
+
+                        <p>
+
+                            I've been fascinated by computers
+                            since childhood. To me, they have
+                            always felt like <span class="highlight">
+                            magical wands</span> — instruments
+                            through which imagination can be
+                            transformed into something tangible,
+                            and seemingly impossible ideas can
+                            become reality.
+
+                        </p>
+
+
+                        <p>
+
+                            Perhaps I'm a little delusional,
+                            but I believe that even the impossible
+                            is worth attempting.
+
+                        </p>
+
+
+                        <div class="quote">
+
+                            <p>
+                                "The world is far more interesting
+                                when you never stop asking why."
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             EXPLORATIONS
+        ================================== -->
+
+        <section class="section" id="explorations">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="mono">02 / THE CURIOSITY</span>
+                        <h2>Things that fascinate me.</h2>
+                    </div>
+
+                    <span class="mono">FIELDS OF EXPLORATION</span>
+
+                </div>
+
+
+                <div class="exploration-grid">
+
+
+                    <div class="exploration-card blue reveal">
+
+                        <div class="card-number">01 / TECHNOLOGY</div>
+
+                        <div>
+                            <div class="exploration-icon">⌘</div>
+
+                            <h3>AI & Computing</h3>
+
+                            <p>
+                                Exploring artificial intelligence,
+                                programming, algorithms and the
+                                fascinating world of computers.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="exploration-card green reveal">
+
+                        <div class="card-number">02 / ENGINEERING</div>
+
+                        <div>
+                            <div class="exploration-icon">⚙</div>
+
+                            <h3>Robotics & Hardware</h3>
+
+                            <p>
+                                Understanding machines, electronics,
+                                sensors and the connection between
+                                software and the physical world.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="exploration-card yellow reveal">
+
+                        <div class="card-number">03 / HUMAN THOUGHT</div>
+
+                        <div>
+                            <div class="exploration-icon">◉</div>
+
+                            <h3>Psychology & Philosophy</h3>
+
+                            <p>
+                                Exploring human behaviour,
+                                consciousness, beliefs and the
+                                questions that make us think.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="exploration-card white reveal">
+
+                        <div class="card-number">04 / THE UNIVERSE</div>
+
+                        <div>
+                            <div class="exploration-icon">✳</div>
+
+                            <h3>Science & Astrophysics</h3>
+
+                            <p>
+                                Exploring the universe, physical
+                                phenomena and the science behind
+                                the world around us.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PROJECTS
+        ================================== -->
+
+        <section class="section" id="projects">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="mono">03 / THE CREATIONS</span>
+                        <h2>Ideas into experiments.</h2>
+                    </div>
+
+                    <p class="projects-intro">
+                        A collection of things I've built,
+                        explored and experimented with.
+                    </p>
+
+                </div>
+
+
+                <div class="project-list">
+
+
+                    <a href="#" class="project reveal">
+
+                        <span class="project-number">01</span>
+
+                        <div>
+                            <h3>Personalized AI Study Assistant</h3>
+
+                            <p>
+                                Building an AI-powered learning
+                                companion for personalized education.
+                            </p>
+                        </div>
+
+                        <span class="project-type">
+                            PYTHON / AI
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+
+
+                    <a href="#" class="project reveal">
+
+                        <span class="project-number">02</span>
+
+                        <div>
+                            <h3>Ultrasonic Radar System</h3>
+
+                            <p>
+                                Exploring electronics, sensors
+                                and hardware using Raspberry Pi 5.
+                            </p>
+                        </div>
+
+                        <span class="project-type">
+                            RASPBERRY PI
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+
+
+                    <a href="#" class="project reveal">
+
+                        <span class="project-number">03</span>
+
+                        <div>
+                            <h3>Organic Nomenclature App</h3>
+
+                            <p>
+                                Connecting computer science
+                                and organic chemistry through
+                                a molecular naming application.
+                            </p>
+                        </div>
+
+                        <span class="project-type">
+                            FLASK / CHEMISTRY
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+
+
+                    <a href="#" class="project reveal">
+
+                        <span class="project-number">04</span>
+
+                        <div>
+                            <h3>Quadratic Equation Solver</h3>
+
+                            <p>
+                                Exploring mathematical concepts
+                                through programming and visualization.
+                            </p>
+                        </div>
+
+                        <span class="project-type">
+                            PYTHON / MATH
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             CREATIVE SPACE
+        ================================== -->
+
+        <section class="section" id="creative">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="mono">04 / BEYOND TECHNOLOGY</span>
+                        <h2>The creative side.</h2>
+                    </div>
+
+                    <span class="mono">OBSERVE / CAPTURE / CREATE</span>
+
+                </div>
+
+
+                <div class="journal-grid reveal">
+
+
+                    <div>
+
+                        <div class="journal-image">
+
+                            <!-- Replace with your own photograph -->
+
+                            <div class="journal-placeholder">
+                                Through my lens.
+                            </div>
+
+                        </div>
+
+
+                        <div class="journal-caption">
+
+                            <span class="mono">
+                                PHOTOGRAPHY / 001
+                            </span>
+
+                            <h3>Finding stories in ordinary moments.</h3>
+
+                            <p>
+                                A personal collection of photographs,
+                                perspectives and visual observations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="journal-side">
+
+                        <span class="mono">
+                            ANOTHER DIMENSION OF CURIOSITY
+                        </span>
+
+                        <h3>
+                            Not everything needs to be
+                            understood through code.
+                        </h3>
+
+                        <p>
+                            Sometimes, I simply enjoy observing
+                            the world, appreciating cinema,
+                            capturing moments and thinking
+                            about things without necessarily
+                            finding an answer.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PERSONAL PHILOSOPHY
+        ================================== -->
+
+        <section class="philosophy">
+
+            <div class="container">
+
+                <div class="philosophy-content reveal">
+
+                    <span class="mono">
+                        A PERSONAL PHILOSOPHY
+                    </span>
+
+                    <h2>
+                        Think beyond what exists.
+                        <span>Explore what could be.</span>
+                    </h2>
+
+                    <p>
+
+                        I believe learning becomes meaningful
+                        when curiosity crosses boundaries.
+                        Every new idea is an opportunity to
+                        discover something, build something
+                        or simply see the world differently.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             CONTACT
+        ================================== -->
+
+        <section class="contact container" id="contact">
+
+            <span class="mono">
+                05 / THE CONVERSATION
+            </span>
+
+            <h2>Stay curious.</h2>
+
+            <p>
+
+                Have an interesting idea, a project,
+                or simply something worth discussing?
+                I'd be happy to connect.
+
+            </p>
+
+
+            <!-- Replace with your actual email address -->
+
+            <a href="mailto:YOUR_EMAIL@example.com"
+               class="button button-dark">
+
+                Get in touch ↗
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <p>
+                © 2026 TAHA LAXMIDHAR
+            </p>
+
+            <p>
+                BUILT WITH CURIOSITY & A LITTLE IMAGINATION.
+            </p>
+
+            <a href="#" class="mono">
+                BACK TO TOP ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+        // Scroll reveal animation
+
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+        revealElements.forEach((element) => {
+            observer.observe(element);
+        });
+
+    </script>
+
+</body>
+</html>
