@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taha Laxmidhar | Portfolio</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #ffffff;
+      --bg-soft: #f8fbfd;
+      --blue: #bce0f5;
+      --green: #b4e5a2;
+      --yellow: #fde96c;
+      --text-dark: #1e242b;
+      --text-muted: #4b5563;
+      --border-light: #e5edf3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.65;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.65;
+    }
+
+    /* Layout Helpers */
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .tag-blue { background-color: var(--blue); }
+    .tag-green { background-color: var(--green); }
+    .tag-yellow { background-color: var(--yellow); }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-top: 5rem;
+      padding-bottom: 4.5rem;
+      position: relative;
+    }
+
+    /* Logo Circle (Matches your uploaded emblem style) */
+    .logo-emblem {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 35%, rgba(188, 224, 245, 0.9) 0%, rgba(188, 224, 245, 0.9) 52%, transparent 53%),
+        radial-gradient(circle at 72% 45%, rgba(180, 229, 162, 0.88) 0%, rgba(180, 229, 162, 0.88) 50%, transparent 51%),
+        radial-gradient(circle at 48% 80%, rgba(253, 233, 108, 0.92) 0%, rgba(253, 233, 108, 0.92) 48%, transparent 49%),
+        #ffffff;
+      border: 2px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px rgba(30, 36, 43, 0.06);
+    }
+
+    .logo-emblem span {
+      font-family: 'Caveat', cursive;
+      font-size: 1.85rem;
+      line-height: 1.05;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text-dark);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(30, 36, 43, 0.08);
+    }
+
+    .btn-primary { background-color: var(--blue); }
+    .btn-secondary { background-color: var(--yellow); }
+
+    /* About Card */
+    .about-box {
+      background-color: var(--bg-soft);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 2rem;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+
+    .pill {
+      padding: 0.4rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background-color: #ffffff;
+      border: 1px solid var(--border-light);
+    }
+
+    /* Grid Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      border-radius: 16px;
+      padding: 1.75rem;
+      border: 1px solid var(--border-light);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-blue { background-color: rgba(188, 224, 245, 0.35); }
+    .card-green { background-color: rgba(180, 229, 162, 0.35); }
+    .card-yellow { background-color: rgba(253, 233, 108, 0.35); }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    /* Photography Placeholders */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .photo-card {
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .photo-placeholder {
+      height: 200px;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* If you replace the placeholder with a real <img>, this styles it cleanly */
+    .photo-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption {
+      padding: 0.9rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Contact Footer */
+    footer {
+      background-color: var(--bg-soft);
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0.5rem auto 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.1rem; }
+      .nav-links { gap: 1rem; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">Taha Laxmidhar</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#explorations">Explorations</a></li>
+        <li><a href="#creative">Creative</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="logo-emblem">
+      <span>Taha<br>Laxmidhar</span>
+    </div>
+    <h1>Hi, I'm Taha Laxmidhar.</h1>
+    <p>
+      Class 11 ISC Student exploring the intersection of <strong>Coding</strong>, <strong>AI</strong>, <strong>Robotics</strong>, and human <strong>Psychology</strong>.
+    </p>
+    <div class="btn-group">
+      <a href="#explorations" class="btn btn-primary">See What I'm Exploring</a>
+      <a href="#creative" class="btn btn-secondary">Photography & Notes</a>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <span class="section-tag tag-blue">About Me</span>
+    <h2>Curious about machines & minds</h2>
+    <div class="about-box">
+      <p>
+        <!-- [EDIT: Customize this paragraph with your ISC subjects and personal story] -->
+        I am a Class 11 ISC student based in India. While I am still at the beginning of my journey, I love learning how things work—from writing logic in code and building basic robotics circuits to understanding human behavior through psychology and cinema.
+      </p>
+      <div class="pills">
+        <span class="pill">💻 Coding</span>
+        <span class="pill">🤖 AI & Robotics</span>
+        <span class="pill">🧠 Psychology</span>
+        <span class="pill">📸 Photography</span>
+        <span class="pill">🎬 Cinema</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech & Learning Explorations -->
+  <section id="explorations">
+    <span class="section-tag tag-green">Tech & Curiosity</span>
+    <h2>What I'm Learning & Building</h2>
+    <div class="grid">
+      <div class="card card-blue">
+        <h3>Coding & Logic</h3>
+        <p>
+          <!-- [EDIT: Replace with the language you are learning, e.g., Java for ISC or Python] -->
+          Practicing programming fundamentals, solving logic problems, and building my first web pages using HTML and CSS.
+        </p>
+      </div>
+      <div class="card card-green">
+        <h3>AI Experiments</h3>
+        <p>
+          <!-- [EDIT: Mention any AI tool, chatbot, or concept you've explored] -->
+          Exploring how artificial intelligence models process language, assist with creative workflows, and solve everyday problems.
+        </p>
+      </div>
+      <div class="card card-yellow">
+        <h3>Robotics & Hardware</h3>
+        <p>
+          <!-- [EDIT: Mention any Arduino, sensor, or school science model you like] -->
