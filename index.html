@@ -121,22 +121,15 @@
     }
 
     /* Logo Circle (Matches your uploaded emblem style) */
-    .logo-emblem {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 30% 35%, rgba(188, 224, 245, 0.9) 0%, rgba(188, 224, 245, 0.9) 52%, transparent 53%),
-        radial-gradient(circle at 72% 45%, rgba(180, 229, 162, 0.88) 0%, rgba(180, 229, 162, 0.88) 50%, transparent 51%),
-        radial-gradient(circle at 48% 80%, rgba(253, 233, 108, 0.92) 0%, rgba(253, 233, 108, 0.92) 48%, transparent 49%),
-        #ffffff;
-      border: 2px solid var(--border-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 25px rgba(30, 36, 43, 0.06);
-    }
+    logo-emblem {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-light);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 25px rgba(30, 36, 43, 0.06);
+}
 
     .logo-emblem span {
       font-family: 'Caveat', cursive;
@@ -320,9 +313,7 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="logo-emblem">
-      <span>Taha<br>Laxmidhar</span>
-    </div>
+   <img src="logo.png" alt="Taha Laxmidhar Logo" class="logo-emblem">
     <h1>Hi, I'm Taha Laxmidhar.</h1>
     <p>
       Class 11 ISC Student exploring the intersection of <strong>Coding</strong>, <strong>AI</strong>, <strong>Robotics</strong>, and human <strong>Psychology</strong>.
