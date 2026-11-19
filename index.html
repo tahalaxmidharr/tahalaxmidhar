@@ -21,6 +21,47 @@
            01. GLOBAL SETTINGS
         ================================= */
 
+                .education-card {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 40px;
+            padding: 40px;
+            background: var(--white);
+            border: 1px solid var(--border);
+        }
+
+        .education-year {
+            color: var(--muted);
+        }
+
+        .education-details h3 {
+            font-family: var(--serif);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .education-institution {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .education-details p {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .education-details .mono {
+            display: inline-block;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 700px) {
+            .education-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
         :root {
             --background: #faf9f6;
             --surface: #ffffff;
@@ -975,6 +1016,77 @@
             </div>
 
         </section>
+
+
+  
+        <section class="section" id="education">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="mono">02 / EDUCATION</span>
+                        <h2>My learning journey.</h2>
+                    </div>
+                    <span class="mono">LEARN / EXPLORE / GROW</span>
+                </div>
+
+                <div class="education-card reveal">
+
+                    <div class="education-year mono">
+                        2026 — PRESENT
+                    </div>
+
+                    <div class="education-details">
+                        <h3>Class XI — ISC</h3>
+
+                        <p class="education-institution">
+                            Science Stream · Artificial Intelligence
+                        </p>
+
+                        <p>
+                            Currently pursuing higher secondary education
+                            under the ISC curriculum, with a focus on
+                            Science and Artificial Intelligence.
+                            Exploring the intersection of technology,
+                            intelligent systems and robotics.
+                        </p>
+
+                        <span class="mono">CURRENTLY LEARNING</span>
+                    </div>
+
+                </div>
+
+                <div class="education-card reveal">
+
+                    <div class="education-year mono">
+                        2026
+                    </div>
+
+                    <div class="education-details">
+                        <h3>ICSE — Class X</h3>
+
+                        <p class="education-institution">
+                            Completed Secondary Education
+                        </p>
+
+                        <p>
+                            Successfully completed the ICSE Board
+                            Examinations with an overall score of 92%.
+                            This milestone marks the beginning of my
+                            deeper exploration into science and technology.
+                        </p>
+
+                        <span class="mono">92% · ICSE BOARD EXAMINATIONS</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
 
 
 
