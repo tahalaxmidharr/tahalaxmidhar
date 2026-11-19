@@ -22,106 +22,170 @@
         ================================= */
 
         
-                /* PHOTOGRAPHY SECTION */
+                
+/* PHOTOGRAPHY SECTION */
 
-                .photography-heading {
-                    align-items: end;
-                    gap: 35px;
-                }
+.photography-heading {
+    align-items: end;
+    gap: 30px;
+}
 
-                .photography-intro {
-                    max-width: 280px;
-                    background: #f5e9a9;
-                    padding: 22px;
-                }
+.photography-intro {
+    max-width: 270px;
+    padding: 18px 22px;
+    background: #f5e9a9;
+}
 
-                .photography-intro .mono {
-                    font-size: 10px;
-                    color: var(--muted);
-                }
+.photography-intro .mono {
+    font-size: 10px;
+    color: var(--muted);
+}
 
-                .photography-intro p {
-                    font-size: 13px;
-                    line-height: 1.8;
-                    margin-top: 12px;
-                    color: var(--text);
-                }
-
-
-                /* PHOTOGRAPHY GALLERY */
-
-                .photography-gallery {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-auto-rows: 230px;
-                    gap: 14px;
-                    margin-top: 35px;
-                }
-
-                .photo-item {
-                    overflow: hidden;
-                    background: #e9e6df;
-                }
-
-                .photo-item img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
-                    transition: transform 0.6s ease;
-                }
-
-                .photo-item:hover img {
-                    transform: scale(1.045);
-                }
-
-                .photo-large {
-                    grid-column: span 2;
-                    grid-row: span 2;
-                }
-
-                .photo-tall {
-                    grid-row: span 2;
-                }
+.photography-intro p {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 10px;
+    color: var(--text);
+}
 
 
-                /* RESPONSIVE DESIGN */
+/* OUTER GALLERY FRAME */
 
-                @media (max-width: 700px) {
+.gallery-frame {
+    margin-top: 35px;
+    padding: 12px;
+    background: #e9e6df;
+    border: 1px solid var(--border);
+}
 
-                    .photography-heading {
-                        align-items: stretch;
-                        flex-direction: column;
-                    }
 
-                    .photography-intro {
-                        max-width: 100%;
-                    }
+/* COLLAGE GRID */
 
-                    .photography-gallery {
-                        grid-template-columns: repeat(2, 1fr);
-                        grid-auto-rows: 180px;
-                        gap: 10px;
-                    }
+.photography-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 180px);
+    gap: 10px;
+}
 
-                    .photo-large {
-                        grid-column: span 2;
-                        grid-row: span 1;
-                    }
 
-                    .photo-tall {
-                        grid-row: span 1;
-                    }
+/* INDIVIDUAL PHOTO FRAMES */
 
-                }
+.gallery-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #faf9f6;
+    padding: 6px;
+    min-width: 0;
+    min-height: 0;
+    text-decoration: none;
+}
 
-                @media (max-width: 420px) {
+.gallery-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
 
-                    .photography-gallery {
-                        grid-auto-rows: 145px;
-                    }
+.gallery-photo:hover img {
+    transform: scale(1.035);
+}
 
-                }
+
+/* COLLAGE ARRANGEMENT */
+
+.photo-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.photo-2 {
+    grid-column: span 1;
+}
+
+.photo-3 {
+    grid-column: span 1;
+}
+
+.photo-4 {
+    grid-column: span 2;
+}
+
+.photo-5 {
+    grid-column: span 1;
+}
+
+.photo-6 {
+    grid-column: span 1;
+}
+
+.photo-7 {
+    grid-column: span 1;
+}
+
+.photo-8 {
+    grid-column: span 1;
+}
+
+
+/* GALLERY FOOTER */
+
+.gallery-caption {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 800px) {
+
+    .photography-gallery {
+        grid-template-rows: repeat(3, 145px);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .photography-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .photography-intro {
+        max-width: 100%;
+    }
+
+    .photography-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 145px);
+        gap: 8px;
+    }
+
+    .photo-1 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .photo-4 {
+        grid-column: span 2;
+    }
+
+    .gallery-frame {
+        padding: 8px;
+    }
+
+}
+
 
 
             .milestone-documents {
@@ -1558,6 +1622,7 @@
         ================================== -->
 
         
+
 <!-- PHOTOGRAPHY SECTION -->
 <section class="section" id="photography">
 
@@ -1573,83 +1638,104 @@
             <div class="photography-intro">
                 <span class="mono">A VISUAL JOURNAL</span>
                 <p>
-                    A collection of moments, places and
-                    perspectives captured along the way.
-                    Finding beauty in the ordinary.
+                    Moments, places and perspectives
+                    captured along the way. Finding
+                    beauty in the ordinary.
                 </p>
             </div>
 
         </div>
 
 
-            <!-- PHOTOGRAPHY SECTION -->
-        <section class="section" id="photography">
+        <!-- PHOTOGRAPHY COLLAGE -->
+        <div class="gallery-frame reveal">
 
-            <div class="container">
+            <div class="photography-gallery">
 
-                <div class="section-heading photography-heading">
+                <a href="images/photo1.jpg"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="gallery-photo photo-1">
+                    <img src="images/photo1.jpg"
+                         alt="Photograph 1"
+                         loading="lazy">
+                </a>
 
-                    <div>
-                        <span class="mono">06 / PHOTOGRAPHY</span>
-                        <h2>Through my lens.</h2>
-                    </div>
+                <a href="images/photo2.jpg"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="gallery-photo photo-2">
+                    <img src="images/photo2.jpg"
+                         alt="Photograph 2"
+                         loading="lazy">
+                </a>
 
-                    <div class="photography-intro">
-                        <span class="mono">A VISUAL JOURNAL</span>
-                        <p>
-                            A collection of moments, places and
-                            perspectives captured along the way.
-                            Finding beauty in the ordinary.
-                        </p>
-                    </div>
+                <a href="images/photo3.jpg"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="gallery-photo photo-3">
+                    <img src="images/photo3.jpg"
+                         alt="Photograph 3"
+                         loading="lazy">
+                </a>
 
-                </div>
+                <a href="images/photo4.jpg"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="gallery-photo photo-4">
+                    <img src="images/photo4.jpg"
+                         alt="Photograph 4"
+                         loading="lazy">
+                </a>
 
+                <a href="images/photo5.jpg"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="gallery-photo photo-5">
+                    <img src="images/photo5.jpg"
+                         alt="Photograph 5"
+                         loading="lazy">
+                </a>
 
-                <!-- PHOTOGRAPHY GALLERY -->
-                <div class="photography-gallery reveal">
+                <a href="images/photo6.jpg"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="gallery-photo photo-6">
+                    <img src="images/photo6.jpg"
+                         alt="Photograph 6"
+                         loading="lazy">
+                </a>
 
-                    <div class="photo-item photo-large">
-                        <img src="images/photo2.jpg"
-                            alt="A landscape photograph"
-                            loading="lazy">
-                    </div>
+                <a href="images/photo7.jpg"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="gallery-photo photo-7">
+                    <img src="images/photo7.jpg"
+                         alt="Photograph 7"
+                         loading="lazy">
+                </a>
 
-                    <div class="photo-item">
-                        <img src="images/photo1.jpg"
-                            alt="Photograph from my collection"
-                            loading="lazy">
-                    </div>
-
-                    <div class="photo-item">
-                        <img src="images/photo3.jpg"
-                            alt="Photograph from my collection"
-                            loading="lazy">
-                    </div>
-
-                    <div class="photo-item">
-                        <img src="images/photo4.jpg"
-                            alt="Photograph from my collection"
-                            loading="lazy">
-                    </div>
-
-                    <div class="photo-item photo-tall">
-                        <img src="images/photo5.jpg"
-                            alt="Photograph from my collection"
-                            loading="lazy">
-                    </div>
-
-                    <div class="photo-item">
-                        <img src="images/photo6.jpg"
-                            alt="Photograph from my collection"
-                            loading="lazy">
-                    </div>
-
-                </div>
+                <a href="images/photo8.jpg"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="gallery-photo photo-8">
+                    <img src="images/photo8.jpg"
+                         alt="Photograph 8"
+                         loading="lazy">
+                </a>
 
             </div>
 
-        </section>
+        </div>
+
+        <p class="gallery-caption mono">
+            A COLLECTION OF MOMENTS · PHOTOGRAPHY
+        </p>
+
+    </div>
+
+</section>
+
 
 
 
